@@ -1,0 +1,63 @@
+<div class="tm-main uk-width-medium-5-6">
+
+    <article class="uk-article">
+        <h1 class="uk-article-title">历史数据曲线</h1>
+        <p class="uk-article-lead">以宝山电厂PMU数据例子为基础的历史曲线。</p>
+
+        <form class="uk-form uk-form-horizontal">
+            <fieldset data-uk-margin="">
+                <legend>基本配置</legend>
+                <div hidden="1" class="uk-form-row">
+                    <label class="uk-form-label">画布宽度</label>
+                    <input class='input' id='CanvasWidth' value='750'>
+                    <label class="uk-form-label">像素</label>
+                    <label class="uk-form-label">画布高度</label>
+                    <input class='input' id='CanvasHeight' value='250'>
+                    <label class="uk-form-label">像素</label>
+                    <label class="uk-form-label">X 轴字段名</label>
+                    <input class="input" id='XAxialFieldName' value='packet_time' disabled='true'>
+
+                    <label class="uk-form-label">Y 轴下限值</label>
+                    <input class="input" id='YAxialBottomLimit' value='49.95'>
+                    <label class="uk-form-label">Y 轴上限值</label>
+                    <input class="input" id='YAxialTopLimit' value='50.05'>
+                    <label class="uk-form-label">Y 轴 「正常值」 下限</label>
+                    <input class="input" id='YAxialIntervalBottomLimit' value='49.967'>
+                    <label class="uk-form-label">Y 轴 「正常值」 上限值</label>
+                    <input class="input" id='YAxialIntervalTopLimit' value='50.033'>
+                </div>
+
+                <div hidden="1" class="uk-form-row">
+                    <label class="uk-form-label">数据库配置</label>
+                    <input class="input" id='DBIPAddress' value='42.96.195.2:1337' disabled='true'>
+                    <label class="uk-form-label">数据库表名</label>
+                    <input class="input" id='DBTableName' value='pmu_avg'>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label">采样起始时刻</label>
+                    <input type="text" id='StartTime' value='2013-12-18 00:00:00'>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label">采样终止时刻</label>
+                    <input class="input" id='EndTime' value='2013-12-18 00:15:00'>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label">Y 轴字段名</label>
+                    <input type="radio" name="YAxialFieldName" id='frequency_001' value="frequency_001" checked="true">频率一
+                    <input type="radio" name="YAxialFieldName" id='frequency_002' value="frequency_002"> 频率二 <br/>
+                    <input type="radio" name="YAxialFieldName" id='power_001' value="power_001" checked="true">功率一
+                    <input type="radio" name="YAxialFieldName" id='power_002' value="power_002"> 功率二
+                </div>
+            </fieldset>
+        </form>
+        <hr>
+        <div class="uk-button-group">
+            <button class='uk-button-success uk-button' onclick='LoadCurve()'> 加载历史曲线</button>
+            <button class='uk-button' onclick='SetCurrentLastTenMinutesInterval()'> 设置为前十分钟</button>
+        </div>
+        <br/>
+        <br/>
+        <div id="canvas"></div>
+        <div id="bottom">.</div>
+    </article>
+</div>

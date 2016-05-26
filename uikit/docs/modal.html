@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>模态对话框组件 - UIkit 中文文档</title>
+        <meta name="description" content="你可以在网页中创建不同风格样式并且具有过渡形式的模态对话框，当然你可以使用任意元素来触发UIkit模态对话框。模态对话框由一个遮罩层，一个对话框和一个关闭按钮组成，并且对它的应用极其简单。">
+        <meta name="author" content="UIkit中文网">
+        <meta name="keywords" content="UIKit模态对话框,遮罩层,覆盖层,模态对话框自适应,关闭对话框,Javascript模态对话框,JS模态对话框,选项卡下拉菜单,Modal component">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+        <link id="data-uikit-theme" rel="stylesheet" href="css/uikit.docs.min.css">
+        <link rel="stylesheet" href="css/docs.css">
+        <link rel="stylesheet" href="../vendor/highlight/highlight.css">
+        <script src="../vendor/jquery.js"></script>
+        <script src="../dist/js/uikit.min.js"></script>
+        <script src="../vendor/highlight/highlight.js"></script>
+        <script src="js/docs.js"></script>
+    </head>
+
+    <body class="tm-background">
+
+        <nav class="tm-navbar uk-navbar uk-navbar-attached">
+            <div class="uk-container uk-container-center">
+
+                <a class="uk-navbar-brand uk-hidden-small" href="http://www.getuikit.net/index.html" title="UIkit"><img class="uk-margin uk-margin-remove" src="images/logo_uikit.svg" width="90" height="30" alt="UIkit"></a>
+
+                <ul class="uk-navbar-nav uk-hidden-small">
+                    <li><a href="documentation_get-started.html">开始使用</a></li>
+                    <li class="uk-active"><a href="components.html">功能组件</a></li>
+                    <li><a href="addons.html">附加组件</a></li>
+                    <li><a href="customizer.html">定制下载</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+
+                <a href="modal.html#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+
+                <div class="uk-navbar-brand uk-navbar-center uk-visible-small"><a href="http://www.getuikit.net/index.html" title="UIkit"><img src="images/logo_uikit.svg" width="90" height="30" alt="UIkit"></a></div>
+
+            </div>
+        </nav>
+
+        <div class="tm-middle">
+            <div class="uk-container uk-container-center">
+
+                <div class="uk-grid" data-uk-grid-margin>
+                    <div class="tm-sidebar uk-width-medium-1-4 uk-hidden-small">
+
+                        <ul class="tm-nav uk-nav" data-uk-nav>
+
+                            <li class="uk-nav-header">默认</li>
+                            <li><a href="normalize.html" title="Normalize component">标准化</a></li>
+                            <li><a href="base.html" title="Base component">基础</a></li>
+                            <li><a href="print.html" title="Print component">打印</a></li>
+
+                            <li class="uk-nav-header">布局</li>
+                            <li><a href="grid.html" title="Grid component">网格</a></li>
+                            <li><a href="panel.html" title="Panel component">面板</a></li>
+                            <li><a href="article.html" title="Article component">文章</a></li>
+                            <li><a href="comment.html" title="Comment component">评论</a></li>
+                            <li><a href="utility.html" title="Utility component">效果</a></li>
+
+                            <li class="uk-nav-header">导航</li>
+                            <li><a href="nav.html" title="Nav component">导航菜单</a></li>
+                            <li><a href="navbar.html" title="Navbar component">导航栏</a></li>
+                            <li><a href="subnav.html" title="Subnav component">子导航</a></li>
+                            <li><a href="breadcrumb.html" title="Breadcrumb component">面包屑</a></li>
+                            <li><a href="pagination.html" title="Pagination component">分页</a></li>
+                            <li><a href="tab.html" title="Tab component">选项卡</a></li>
+
+                            <li class="uk-nav-header">元素</li>
+                            <li><a href="list.html" title="List component">列表</a></li>
+                            <li><a href="description-list.html" title="Description list component">描述列表</a></li>
+                            <li><a href="table.html" title="Table component">表格</a></li>
+                            <li><a href="form.html" title="Form component">表单</a></li>
+
+                            <li class="uk-nav-header">常用</li>
+                            <li><a href="button.html" title="Button component">按钮</a></li>
+                            <li><a href="icon.html" title="Icon component">图标</a></li>
+                            <li><a href="close.html" title="Close component">关闭</a></li>
+                            <li><a href="badge.html" title="Badge component">徽章</a></li>
+                            <li><a href="alert.html" title="Alert component">提示框</a></li>
+                            <li><a href="thumbnail.html" title="Thumbnail component">缩略图</a></li>
+                            <li><a href="overlay.html" title="Overlay component">覆盖</a></li>
+                            <li><a href="progress.html" title="Progress component">进度条</a></li>
+                            <li><a href="search.html" title="Search component">搜索</a></li>
+                            <li><a href="text.html" title="Text component">文本</a></li>
+                            <li><a href="animation.html" title="Animation component">动画</a></li>
+
+                            <li class="uk-nav-header">JavaScript</li>
+                            <li><a href="dropdown.html" title="Dropdown">下拉菜单</a></li>
+                            <li class="uk-active"><a href="modal.html" title="Modal component">模态对话框</a></li>
+                            <li><a href="offcanvas.html" title="Off-canvas component">弹出式画布</a></li>
+                            <li><a href="switcher.html" title="Switcher component">切换器</a></li>
+                            <li><a href="toggle.html" title="Toggle component">拨动</a></li>
+                            <li><a href="tooltip.html" title="Tooltip component">提示组件</a></li>
+                            <li><a href="scrollspy.html" title="Scrollspy component">监听滚动</a></li>
+                            <li><a href="smooth-scroll.html" title="Smooth scroll component">平滑滚动</a></li>
+
+                        </ul>
+
+                    </div>
+                    <div class="tm-main uk-width-medium-3-4">
+
+                        <article class="uk-article">
+
+                            <h1 class="uk-article-title">模态对话框</h1>
+
+                            <p class="uk-article-lead">创建不同样式和过渡形式的模态对话框。</p>
+
+                            <h2 id="用法"><a href="modal.html#用法" class="uk-link-reset">用法</a></h2>
+                            <p>模态对话框由一个遮罩层，一个对话框和一个关闭按钮组成。</p>
+
+                            <div class="uk-overflow-container">
+                                <table class="uk-table">
+                                    <thead>
+                                        <tr>
+                                            <th>类</th>
+                                            <th>概述</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>.uk-modal</code></td>
+                                            <td>添加这个类到一个 <code>&lt;div&gt;</code> 元素中，创建一个对话框容器和屏蔽页面的遮罩层。添加一个id来标示这个元素对于触发遮罩层至关重要。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-modal-dialog</code></td>
+                                            <td>添加这个类到一个子级的 <code>&lt;div&gt;</code> 元素中创建对话框。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-modal-close</code></td>
+                                            <td>添加这个类到一个 <code>&lt;a&gt;</code> 或 <code>&lt;button&gt;</code> 元素中创建一个对话框中的关闭按钮。我们推荐添加 <a href="close.html" title="Close component">关闭组件</a> 中的 <code>.uk-close</code> 类给关闭按钮设置一个恰当的样式，你也可以使用文字或者图片。</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p>你可以使用任意元素来触发模态对话框。一个 <code>&lt;a&gt;</code> 元素需要链接到模态对话框的id。为了使必要的JavaScript能够生效，需要添加 <code>data-uk-modal</code> 属性。如果你使用的是其他的元素，比如按钮，只需添加 <code>data-uk-modal="{target:'#ID'}"</code> 属性来瞄准模态对话框的id。</p>
+
+                            <h3 class="tm-article-subtitle">示例</h3>
+
+                            <button class="uk-button" data-uk-modal="{target:'#modal'}">Open</button>
+                            <a href="modal.html#modal" data-uk-modal>Open</a>
+                            <div id="modal" class="uk-modal">
+                                <div class="uk-modal-dialog">
+                                    <a href="modal.html" class="uk-modal-close uk-close"></a>
+                                    <h1>Headline</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+
+                            <h3 class="tm-article-subtitle">Code.</h3>
+
+<pre><code>&lt;!-- 这是一个用来切触发模态对话框的锚 --&gt;
+&lt;a href="#my-id" data-uk-modal&gt;...&lt;/a&gt;
+
+&lt;!-- 这是用来触发模态对话框的按钮 --&gt;
+&lt;button class="uk-button" data-uk-modal="{target:'#my-id'}"&gt;...&lt;/button&gt;
+
+&lt;!-- 这是模态对话框 --&gt;
+&lt;div id="my-id" class="uk-modal"&gt;
+    &lt;div class="uk-modal-dialog"&gt;
+        &lt;a class="uk-modal-close uk-close"&gt;&lt;/a&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                            <hr class="uk-article-divider">
+
+                            <h3>JavaScript 选项</h3>
+
+                            <p>默认情况下，点击模态遮罩层时，模态对话框会自动关闭。要想避免它的发生，添加 <code>data-uk-modal="{target:'#ID',bgclose:false}"</code> 属性即可。</p>
+
+                            <hr class="uk-article-divider">
+
+                            <h2 id="frameless-modifier"><a href="modal.html#frameless-modifier" class="uk-link-reset">无边框调整</a></h2>
+
+                            <p>默认情况下，模态对话框有一个padding填充。为了避免这种情况和消除所有的框，添加一个 <code>.uk-modal-dialog-frameless</code> 类。如果你想用模态对话框来展示图片的话，这会很有用。关闭按钮会自动调整添加到无边框对话框的合适位置上。</p>
+
+                            <h3 class="tm-article-subtitle">示例</h3>
+
+                            <button class="uk-button" data-uk-modal="{target:'#modal-3'}">Open</button>
+                            <div id="modal-3" class="uk-modal">
+                                <div class="uk-modal-dialog uk-modal-dialog-frameless">
+                                    <a href="modal.html" class="uk-modal-close uk-close uk-close-alt"></a>
+                                    <img src="images/placeholder_600x400.svg" width="600" height="400" alt="">
+                                </div>
+                            </div>
+
+                            <h3 class="tm-article-subtitle">Code.</h3>
+
+<pre><code>&lt;!-- 这是触发模态对话框的锚 --&gt;
+&lt;a href="#my-id" data-uk-modal&gt;...&lt;/a&gt;
+
+&lt;!-- 这是模态对话框 --&gt;
+&lt;div id="my-id" class="uk-modal"&gt;
+    &lt;div class="uk-modal-dialog uk-modal-dialog-frameless"&gt;
+        &lt;a href="" class="uk-modal-close uk-close uk-close-alt"&gt;&lt;/a&gt;
+        &lt;img src="" alt=""&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                        <p><span class="uk-badge">注意</span> 在无边框的模态对话框内创建关闭按钮时，我们同样建议添加 <a href="close.html" title="Close component">关闭组件</a> 中的 <code>.uk-close</code> 类。在这种情况下，你还必须要添加 <code>.uk-close-alt</code> 类给按钮添加适配无边框模态对话框的样式。</p>
+
+                        <hr class="uk-article-divider">
+
+                        <h2 id="large-dialog-modifier"><a href="modal.html#large-dialog-modifier" class="uk-link-reset">大对话框调整</a></h2>
+
+                        <p>把网页容器的宽度应用到模态对话框上，添加 <code>.uk-modal-dialog-large</code> 类即可。</p>
+
+                        <h3 class="tm-article-subtitle">示例</h3>
+
+                        <a href="modal.html#modal-4" class="uk-button" data-uk-modal>Open</a>
+                        <div id="modal-4" class="uk-modal">
+                            <div class="uk-modal-dialog uk-modal-dialog-large">
+                                <button type="button" class="uk-modal-close uk-close"></button>
+                                <h1>Headline</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+
+<h3 class="tm-article-subtitle">Code.</h3>
+
+<pre><code>&lt;div class="uk-modal-dialog uk-modal-dialog-large"&gt;...&lt;/div&gt;</code></pre>
+
+                        <hr class="uk-article-divider">
+
+                        <h2 id="overflow-container-in-modal"><a href="modal.html#overflow-container-in-modal" class="uk-link-reset">在模态对话框中溢出容器</a></h2>
+
+                        <p>你可以把模态对话框的内容显示在可滚动的容器中。添加 <code>.uk-overflow-container</code> 类到模态对话框中的一个 <code>&lt;div&gt;</code> 元素即可。模态对话框会自动扩展并填充到网页的高度。</p>
+
+                        <h3 class="tm-article-subtitle">示例</h3>
+
+                        <a href="modal.html#modal-5" class="uk-button" data-uk-modal>Open</a>
+                        <div id="modal-5" class="uk-modal">
+                            <div class="uk-modal-dialog uk-modal-dialog-large">
+                                <button type="button" class="uk-modal-close uk-close"></button>
+                                <h1>Headline</h1>
+                                <h2>Some text above the scrollable box</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <div class="uk-overflow-container">
+                                    <h2>Overflow container</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                                <h2>Some text below the overflow container</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+
+<h3 class="tm-article-subtitle">Code.</h3>
+
+<pre><code>&lt;div class="uk-modal-dialog"&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;div class="uk-overflow-container"&gt;...&lt;/div&gt;
+    &lt;p&gt;...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+                        <hr class="uk-article-divider">
+
+                        <h2 id="javascript"><a href="modal.html#javascript" class="uk-link-reset">JavaScript</a></h2>
+
+                        <p>你可以通过原生的Javascript处理模态对话框。</p>
+
+                        <h3 class="tm-article-subtitle">示例</h3>
+
+<pre><code>var modal = $.UIkit.modal(".modalSelector");
+
+if ( modal.isActive() ) {
+    modal.hide();
+} else {
+    modal.show();
+}</code></pre>
+
+                        <hr class="uk-article-divider">
+
+                        <h3>事件</h3>
+
+                        <p>当模态对话框处于打开状态时，触发一次 <code>uk.modal.show</code> 事件。当模态对话框关闭状态时，触发 <code>uk.modal.hide</code> 事件。</p>
+
+                        <h3 class="tm-article-subtitle">示例</h3>
+
+<pre><code>$('.modalSelector').on({
+
+    'uk.modal.show': function(){
+        console.log("Modal is visible.");
+    },
+
+    'uk.modal.hide': function(){
+        console.log("Element is not visible.");
+    }
+});</code></pre>
+
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tm-footer">
+            <div class="uk-container uk-container-center uk-text-center">
+
+                <ul class="uk-subnav uk-subnav-line">
+                    <li><a href="https://github.com/uikit/uikit" target="_blank" rel="nofollow">GitHub</a></li>
+                    <li><a href="https://github.com/uikit/uikit/issues" target="_blank" rel="nofollow">问题反馈</a></li>
+                    <li><a href="https://github.com/uikit/uikit/blob/master/CHANGELOG.md" target="_blank" rel="nofollow">更新日志</a></li>
+                    <li><a href="http://weibo.com/getuikit" target="_blank" rel="nofollow">新浪微博</a></li>
+                    <li><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0c44dcd3aa48076b3e0a91169a4ac665' type='text/javascript'%3E%3C/script%3E"));
+</script></li>
+                </ul>
+
+                <div class="uk-panel">
+                    <p>Made by <a href="http://www.yootheme.com" target="_blank" rel="nofollow">YOOtheme</a> with love and caffeine.<br>Licensed under <a href="http://opensource.org/licenses/MIT" target="_blank" rel="nofollow">MIT license</a>.<br><a href="http://www.getuikit.net/">UIkit中文网</a>翻译</p>
+                    <a href="http://www.getuikit.net/index.html"><img src="images/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="tm-offcanvas" class="uk-offcanvas">
+
+            <div class="uk-offcanvas-bar">
+
+                <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="{multiple:true}">
+                    <li class="uk-parent"><a href="modal.html#">说明文档</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="documentation_get-started.html">开始使用</a></li>
+                            <li><a href="documentation_how-to-customize.html">如何自定义</a></li>
+							<li><a href="documentation_layouts.html">布局示例</a></li>
+                            <li><a href="components.html">功能组件</a></li>
+                            <li><a href="addons.html">附加组件</a></li>
+                            <li><a href="documentation_project-structure.html">项目结构</a></li>
+                            <li><a href="documentation_create-a-theme.html">创建主题</a></li>
+                            <li><a href="documentation_create-a-style.html">创建样式</a></li>
+                            <li><a href="documentation_customizer-json.html">Customizer.json</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-nav-header">功能组件</li>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-wrench"></i> 默认</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="normalize.html" title="Normalize component">标准化</a></li>
+                            <li><a href="base.html" title="Base component">基础</a></li>
+                            <li><a href="print.html" title="Print component">打印</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-th-large"></i> 布局</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="grid.html" title="Grid component">网格</a></li>
+                            <li><a href="panel.html" title="Panel component">面板</a></li>
+                            <li><a href="article.html" title="Article component">文章</a></li>
+                            <li><a href="comment.html" title="Comment component">评论</a></li>
+                            <li><a href="utility.html" title="Utility component">效果</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-bars"></i> 导航</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="nav.html" title="Nav component">导航菜单</a></li>
+                            <li><a href="navbar.html" title="Navbar component">导航栏</a></li>
+                            <li><a href="subnav.html" title="Subnav component">子导航</a></li>
+                            <li><a href="breadcrumb.html" title="Breadcrumb component">面包屑</a></li>
+                            <li><a href="pagination.html" title="Pagination component">分页</a></li>
+                            <li><a href="tab.html" title="Tab component">选项卡</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-check"></i> 元素</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="list.html" title="List component">列表</a></li>
+                            <li><a href="description-list.html" title="Description list component">描述列表</a></li>
+                            <li><a href="table.html" title="Table component">表格</a></li>
+                            <li><a href="form.html" title="Form component">表单</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-folder-open"></i> 常用</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="button.html" title="Button component">按钮</a></li>
+                            <li><a href="icon.html" title="Icon component">图标</a></li>
+                            <li><a href="close.html" title="Close component">关闭</a></li>
+                            <li><a href="badge.html" title="Badge component">徽章</a></li>
+                            <li><a href="alert.html" title="Alert component">提示框</a></li>
+                            <li><a href="thumbnail.html" title="Thumbnail component">缩略图</a></li>
+                            <li><a href="overlay.html" title="Overlay component">覆盖</a></li>
+                            <li><a href="progress.html" title="Progress component">进度条</a></li>
+                            <li><a href="search.html" title="Search component">搜索</a></li>
+                            <li><a href="text.html" title="Text component">文本</a></li>
+                            <li><a href="animation.html" title="Animation component">动画</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent uk-active"><a href="modal.html#"><i class="uk-icon-magic"></i> JavaScript</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="dropdown.html" title="Dropdown">下拉菜单</a></li>
+                            <li><a href="modal.html" title="Modal component">模态对话框</a></li>
+                            <li><a href="offcanvas.html" title="Off-canvas component">弹出式画布</a></li>
+                            <li><a href="switcher.html" title="Switcher component">切换器</a></li>
+                            <li><a href="toggle.html" title="Toggle component">拨动</a></li>
+                            <li><a href="tooltip.html" title="Tooltip component">提示组件</a></li>
+                            <li><a href="scrollspy.html" title="Scrollspy component">监听滚动</a></li>
+                            <li><a href="smooth-scroll.html" title="Smooth scroll component">平滑滚动</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="modal.html#">附加组件</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="addons_markdownarea.html" title="Markdown area add-on">Markdown 编辑器</a></li>
+                            <li><a href="addons_sortable.html" title="Sortable add-on">拖放排序</a></li>
+                            <li><a href="addons_datepicker.html" title="Datepicker add-on">日期选择器</a></li>
+                            <li><a href="addons_timepicker.html" title="Timepicker add-on">时间选择器</a></li>
+                            <li><a href="addons_sticky.html" title="Sticky add-on">黏性组件</a></li>
+                            <li><a href="addons_notify.html" title="Notify add-on">通告组件</a></li>
+                            <li><a href="addons_form-password.html" title="Form password add-on">表单密码</a></li>
+                            <li><a href="addons_form-file.html" title="Form file">文件域</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+        <a href="javascript:void(0)" id="goTop" class="uk-button" data-uk-smooth-scroll><i class="uk-icon-chevron-up"></i></a>
+
+    </body>
+</html>

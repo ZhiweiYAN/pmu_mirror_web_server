@@ -1,0 +1,38 @@
+<div class="tm-main uk-width-medium-5-6">
+
+    <article class="uk-article">
+        <h1 class="uk-article-title">调频考核结果</h1>
+        <p class="uk-article-lead">以宝山电厂PMU数据例子为基础的考核结果表。</p>
+
+        <form class="uk-form uk-form-horizontal">
+            <fieldset data-uk-margin="">
+                <legend>基本配置</legend>
+                <div hidden="1" class="uk-form-row">
+                    <label class="uk-form-label">数据库配置</label>
+                    <input class="input" id='DBIPAddress' value='42.96.195.2:1337' disabled='true'>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label">采样起始时刻</label>
+                    <input type="text" id='StartTime' value='2013-12-17 00:15:00'>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label">采样终止时刻</label>
+                    <input class="input" id='EndTime' value='2013-12-18 01:18:00'>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label">机组编号</label>
+                    <input type="radio" name="DBTableName" id='DBTableName_001' value="pmu_chk_001" checked="true">机组一
+                    <input type="radio" name="DBTableName" id='DBTableName_002' value="pmu_chk_002">机组二
+                </div>
+            </fieldset>
+        </form>
+        <hr>
+        <div class="uk-button-group">
+            <button class='uk-button-success uk-button uk-animation-scale-down' onclick='LoadCheckTable()'> 加载考核表</button>
+            <button class='uk-button' onclick='SetCurrentMonth()'> 设置时间区间为本月</button>
+        </div>
+        <br/>
+        <br/>
+        <div id="detail"></div>
+    </article>
+</div>

@@ -1,0 +1,99 @@
+body {
+    margin-top: 60px;
+}
+
+.light {
+    background: #CCC;
+    color: #333;
+}
+
+.dark {
+    background: #333;
+    color: #CCC;
+}
+
+.grid {
+    text-align: center;
+    font-size: 10px;
+}
+
+.banner {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.table {
+    margin-bottom: 35px;
+}
+
+.banner button {
+    margin-top: 7px;
+}
+
+.divider {
+    width: 100%;
+    background: #CCC;
+    height: 1px;
+    margin: 25px 0;
+}
+
+.explainer {
+    font-weight: 200;
+    color: #AAA;
+    margin-bottom: 10px;
+}
+
+button {
+    margin-bottom: 10px;
+}
+
+input {
+    type: 'text';
+    border-color: #A3A3A3;
+    line-height: 2em;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.freq-line{
+    fill: none;
+    stroke: url(#freq-line-gradient);
+    stroke-width: 1.5px;
+}
+
+.line.above {
+    stroke: red;
+    stroke-width: 3px;
+}
+.line.below{
+    stroke: red;
+    stroke-width: 3px;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.focus circle {
+    fill: none;
+    stroke: steelblue;
+}
+
+
+

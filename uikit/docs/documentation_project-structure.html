@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>项目结构 - UIkit 中文文档</title>
+        <meta name="description" content="深入挖掘UIkit的核心部分，了解关于它的一切。">
+        <meta name="author" content="UIkit中文网">
+        <meta name="keywords" content="UIkit核心部分,UIkit项目结构,UIKit文件结构,测试UIKit,UIKit高级用法,自动化预处理,安装Node,设置Grunt">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+        <link id="data-uikit-theme" rel="stylesheet" href="css/uikit.docs.min.css">
+        <link rel="stylesheet" href="css/docs.css">
+        <link rel="stylesheet" href="../vendor/highlight/highlight.css">
+        <script src="../vendor/jquery.js"></script>
+        <script src="../dist/js/uikit.min.js"></script>
+        <script src="../vendor/highlight/highlight.js"></script>
+        <script src="js/docs.js"></script>
+    </head>
+
+    <body class="tm-background">
+
+        <nav class="tm-navbar uk-navbar uk-navbar-attached">
+            <div class="uk-container uk-container-center">
+
+                <a class="uk-navbar-brand uk-hidden-small" href="http://www.getuikit.net/index.html" title="UIkit"><img class="uk-margin uk-margin-remove" src="images/logo_uikit.svg" width="90" height="30" alt="UIkit"></a>
+
+                <ul class="uk-navbar-nav uk-hidden-small">
+                    <li class="uk-active"><a href="documentation_get-started.html">开始使用</a></li>
+                    <li><a href="components.html">功能组件</a></li>
+                    <li><a href="addons.html">附加组件</a></li>
+                    <li><a href="customizer.html">定制下载</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+
+                <a href="documentation_project-structure.html#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+
+                <div class="uk-navbar-brand uk-navbar-center uk-visible-small"><a href="http://www.getuikit.net/index.html" title="UIkit"><img src="images/logo_uikit.svg" width="90" height="30" alt="UIkit"></a></div>
+
+            </div>
+        </nav>
+
+        <div class="tm-middle">
+            <div class="uk-container uk-container-center">
+
+                <div class="uk-grid" data-uk-grid-margin>
+                    <div class="tm-sidebar uk-width-medium-1-4 uk-hidden-small">
+
+                        <ul class="tm-nav uk-nav" data-uk-nav>
+
+                            <li class="uk-nav-header">初学者</li>
+                            <li><a href="documentation_get-started.html">开始使用</a></li>
+                            <li><a href="documentation_how-to-customize.html">如何自定义</a></li>
+							<li><a href="documentation_layouts.html">布局示例</a></li>
+                            <li class="uk-nav-header">开发者</li>
+                            <li class="uk-active"><a href="documentation_project-structure.html">项目结构</a></li>
+                            <li><a href="documentation_create-a-theme.html">创建主题</a></li>
+                            <li><a href="documentation_create-a-style.html">创建样式</a></li>
+                            <li><a href="documentation_customizer-json.html">Customizer.json</a></li>
+							<li><a href="documentation_javascript.html">JavaScript</a></li>
+
+                        </ul>
+
+                    </div>
+                    <div class="tm-main uk-width-medium-3-4">
+
+                        <article class="uk-article">
+
+                            <h1>项目结构</h1>
+
+                            <p class="uk-article-lead">深入挖掘UIkit的核心部分，了解关于它的一切。</p>
+
+                            <h2>GitHub</h2>
+
+                            <p>UIkit被托管在 <a href="https://github.com/uikit/uikit" target="_blank" rel="nofollow">GitHub</a> 上，基于 <a href="http://opensource.org/licenses/MIT" target="_blank" rel="nofollow">MIT 许可协议</a>。 欢迎使用它应用于个人或商业项目。想要获取 UIKit 所有的源文件，只需克隆 <a href="https://github.com/uikit/uikit" target="_blank" rel="nofollow">GitHub</a> 上的资源库，或者直接下载最新的版本。</p>
+
+                            <p><a class="uk-button uk-button-large uk-button-primary" href="https://github.com/uikit/uikit/archive/master.zip" target="_blank" rel="nofollow">下载源代码</a></p>
+
+                            <hr class="uk-article-divider">
+
+                            <h2>文件结构</h2>
+
+                            <p>UIkit 基于<a href="http://www.lesscss.net/" target="_blank" rel="nofollow">LESS</a>创建，LESS是一款CSS预处理器，将 CSS 赋予了动态语言的特性，如变量，继承，运算，函数等。它将写入LESS中的代码编译成为CSS。 UIkit主要的文件结构如下。 </p>
+
+                            <table class="uk-table uk-table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>文件夹</th>
+                                        <th>概述</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>/addons/src</code></td>
+                                        <td>包含所有附加组件相关的LESS和JavaScript文件。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/addons/tests</code></td>
+                                        <td>包含所有附加组件的测试文件。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/dist</code></td>
+                                        <td>包含所有已编译的及精缩CSS和JavaScript文件，以及字体。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/docs</code></td>
+                                        <td>包含你现在正在看的所有UIKit说明文档，。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/src/less</code></td>
+                                        <td>包含所有LESS组件文件。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/src/js</code></td>
+                                        <td>包含所有JavaScript组件文件。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/src/fonts</code></td>
+                                        <td>包含UIKit中使用的字体。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/src/tests</code></td>
+                                        <td>包含UIKit所有组件的测试文件。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/themes</code></td>
+                                        <td>在子文件夹中包含的所有额外提供的主题文件。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/vendor</code></td>
+                                        <td>包含UIkit所使用的jQuery和其他的外部库。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <hr class="uk-article-divider">
+
+                            <h2>自动化预处理</h2>
+
+                            <p>我们利用 <a href="http://www.gruntjs.org/" target="_blank" rel="nofollow">Grunt</a>（一个基于 <a href="http://nodejs.org/" target="_blank" rel="nofollow">Node.js</a> 的自动化的项目构建工具），自动将LESS文件编译为CSS，它安装在你的工作目录中并监控所有的操作。每当你保存更改后的源文件，Grunt 将自动把所有文件编译成一个单独的CSS文件。</p>
+
+                            <p>首先，你需要安装Node，并设置 <code>grunt.cli</code> 作为一个全局的安装，然后切换到UIkit目录，并安装Node dependencies。</p>
+
+<pre><code>npm install -g grunt-cli
+
+cd uikit
+npm install</code></pre>
+
+                            <p>现在你可以运行 Grunt 建立和修改版本。UIkit的内置版本被放在 <code>/dist</code> 目录中。</p>
+
+<pre><code>grunt</code></pre>
+
+                            <p>你还可以设置 Grunt 监控你的工作目录，这样它就能随时自动预处理你所保存的文件。</p>
+
+<pre><code>grunt watch</code></pre>
+
+                            <p>加载新的主题和风格样式到定制器。</p>
+
+<pre><code>grunt indexthemes</code></pre>
+
+                            <hr class="uk-article-divider">
+
+                            <h2>测试</h2>
+
+                            <p>UIkit为每个组件提供测试文件。其中每个页面都包含了组件的测试示例，并为你提供了一个关于盒子所支持的所有可能性的总览。</p>
+
+                            <p>代替预编译的CSS，我们使用客户端JavaScript来转化LESS文件，因此当你正在制作你自己的主题，或者修改现有的主题时，你能在浏览器中看到即时的变化。你能在测试中切换所有的组件和主题，甚至切换到RTL模式（从右到左）。</p>
+
+                            <p><a class="uk-button uk-button-large uk-button-primary" href="../src/tests/overview.html">前往测试</a></p>
+
+                        </article>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tm-footer">
+            <div class="uk-container uk-container-center uk-text-center">
+
+                <ul class="uk-subnav uk-subnav-line">
+                    <li><a href="https://github.com/uikit/uikit" target="_blank" rel="nofollow">GitHub</a></li>
+                    <li><a href="https://github.com/uikit/uikit/issues" target="_blank" rel="nofollow">问题反馈</a></li>
+                    <li><a href="https://github.com/uikit/uikit/blob/master/CHANGELOG.md" target="_blank" rel="nofollow">更新日志</a></li>
+                    <li><a href="http://weibo.com/getuikit" target="_blank" rel="nofollow">新浪微博</a></li>
+                    <li><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0c44dcd3aa48076b3e0a91169a4ac665' type='text/javascript'%3E%3C/script%3E"));
+</script></li>
+                </ul>
+
+                <div class="uk-panel">
+                    <p>Made by <a href="http://www.yootheme.com" target="_blank" rel="nofollow">YOOtheme</a> with love and caffeine.<br>Licensed under <a href="http://opensource.org/licenses/MIT" target="_blank" rel="nofollow">MIT license</a>.<br><a href="http://www.getuikit.net/">UIkit中文网</a>翻译</p>
+                    <a href="http://www.getuikit.net/index.html"><img src="images/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="tm-offcanvas" class="uk-offcanvas">
+
+            <div class="uk-offcanvas-bar">
+
+                <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="{multiple:true}">
+                    <li class="uk-parent uk-active"><a href="documentation_project-structure.html#">说明文档</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="documentation_get-started.html">开始使用</a></li>
+                            <li><a href="documentation_how-to-customize.html">如何自定义</a></li>
+							<li><a href="documentation_layouts.html">布局示例</a></li>
+                            <li><a href="components.html">功能组件</a></li>
+                            <li><a href="addons.html">附加组件</a></li>
+                            <li><a href="documentation_project-structure.html">项目结构</a></li>
+                            <li><a href="documentation_create-a-theme.html">创建主题</a></li>
+                            <li><a href="documentation_create-a-style.html">创建样式</a></li>
+                            <li><a href="documentation_customizer-json.html">Customizer.json</a></li>
+							<li><a href="documentation_javascript.html">JavaScript</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-nav-header">功能组件</li>
+                    <li class="uk-parent"><a href="documentation_project-structure.html#"><i class="uk-icon-wrench"></i> 默认</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="normalize.html" title="Normalize component">标准化</a></li>
+                            <li><a href="base.html" title="Base component">基础</a></li>
+                            <li><a href="print.html" title="Print component">打印</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_project-structure.html#"><i class="uk-icon-th-large"></i> 布局</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="grid.html" title="Grid component">网格</a></li>
+                            <li><a href="panel.html" title="Panel component">面板</a></li>
+                            <li><a href="article.html" title="Article component">文章</a></li>
+                            <li><a href="comment.html" title="Comment component">评论</a></li>
+                            <li><a href="utility.html" title="Utility component">效果</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_project-structure.html#"><i class="uk-icon-bars"></i> 导航</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="nav.html" title="Nav component">导航菜单</a></li>
+                            <li><a href="navbar.html" title="Navbar component">导航栏</a></li>
+                            <li><a href="subnav.html" title="Subnav component">子导航</a></li>
+                            <li><a href="breadcrumb.html" title="Breadcrumb component">面包屑</a></li>
+                            <li><a href="pagination.html" title="Pagination component">分页</a></li>
+                            <li><a href="tab.html" title="Tab component">选项卡</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_project-structure.html#"><i class="uk-icon-check"></i> 元素</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="list.html" title="List component">列表</a></li>
+                            <li><a href="description-list.html" title="Description list component">描述列表</a></li>
+                            <li><a href="table.html" title="Table component">表格</a></li>
+                            <li><a href="form.html" title="Form component">表单</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_project-structure.html#"><i class="uk-icon-folder-open"></i> 常用</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="button.html" title="Button component">按钮</a></li>
+                            <li><a href="icon.html" title="Icon component">图标</a></li>
+                            <li><a href="close.html" title="Close component">关闭</a></li>
+                            <li><a href="badge.html" title="Badge component">徽章</a></li>
+                            <li><a href="alert.html" title="Alert component">提示框</a></li>
+                            <li><a href="thumbnail.html" title="Thumbnail component">缩略图</a></li>
+                            <li><a href="overlay.html" title="Overlay component">覆盖</a></li>
+                            <li><a href="progress.html" title="Progress component">进度条</a></li>
+                            <li><a href="search.html" title="Search component">搜索</a></li>
+                            <li><a href="text.html" title="Text component">文本</a></li>
+                            <li><a href="animation.html" title="Animation component">动画</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_project-structure.html#"><i class="uk-icon-magic"></i> JavaScript</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="dropdown.html" title="Dropdown">下拉菜单</a></li>
+                            <li><a href="modal.html" title="Modal component">模态对话框</a></li>
+                            <li><a href="offcanvas.html" title="Off-canvas component">弹出式画布</a></li>
+                            <li><a href="switcher.html" title="Switcher component">切换器</a></li>
+                            <li><a href="toggle.html" title="Toggle component">拨动</a></li>
+                            <li><a href="tooltip.html" title="Tooltip component">提示组件</a></li>
+                            <li><a href="scrollspy.html" title="Scrollspy component">监听滚动</a></li>
+                            <li><a href="smooth-scroll.html" title="Smooth scroll component">平滑滚动</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_project-structure.html#">附加组件</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="addons_markdownarea.html" title="Markdown area add-on">Markdown 编辑器</a></li>
+                            <li><a href="addons_sortable.html" title="Sortable add-on">拖放排序</a></li>
+                            <li><a href="addons_datepicker.html" title="Datepicker add-on">日期选择器</a></li>
+                            <li><a href="addons_timepicker.html" title="Timepicker add-on">时间选择器</a></li>
+                            <li><a href="addons_sticky.html" title="Sticky add-on">黏性组件</a></li>
+                            <li><a href="addons_notify.html" title="Notify add-on">通告组件</a></li>
+                            <li><a href="addons_form-password.html" title="Form password add-on">表单密码</a></li>
+                            <li><a href="addons_form-file.html" title="Form file">文件域</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+        <a href="javascript:void(0)" id="goTop" class="uk-button" data-uk-smooth-scroll><i class="uk-icon-chevron-up"></i></a>
+
+    </body>
+</html>

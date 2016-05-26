@@ -1,0 +1,73 @@
+<div class="tm-main uk-width-medium-5-6">
+
+    <article class="uk-article">
+        <h1 class="uk-article-title">频率曲线分析</h1>
+        <p class="uk-article-lead">以宝山电厂PMU数据为例的频率曲线分析。</p>
+
+        <form class="uk-form uk-form-horizontal">
+            <fieldset data-uk-margin="">
+                <legend>基本配置</legend>
+                <div hidden="1" class="uk-form-row">
+                    <label class="uk-form-label">画布宽度</label>
+                    <input class='input' id='CanvasWidth' value='750'>
+                    <label class="uk-form-label">像素</label>
+                    <label class="uk-form-label">画布高度</label>
+                    <input class='input' id='CanvasHeight' value='250'>
+                    <label class="uk-form-label">像素</label>
+                    <label class="uk-form-label">X 轴字段名</label>
+                    <input class="input" id='XAxialFieldName' value='packet_time' disabled='true'>
+                </div>
+
+                <div hidden="1" class="uk-form-row">
+                    <label class="uk-form-label">数据库配置</label>
+                    <input class="input" id='DBIPAddress' value='42.96.195.2:1337' disabled='true'>
+                    <label class="uk-form-label">数据库表名</label>
+                    <input class="input" id='DBTableName' value='pmu_avg'>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label">采样起始时刻</label>
+                    <input type="text" id='StartTime' value='2013-12-18 00:00:00'>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label">采样终止时刻</label>
+                    <input class="input" id='EndTime' value='2013-12-18 00:15:00'>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label">Y 轴字段名</label>
+                    <input type="radio" name="YAxialFieldName" id='frequency_001' value="frequency_001" checked="true">频率一
+                    <input type="radio" name="YAxialFieldName" id='frequency_002' value="frequency_002"> 频率二 <br/>
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-1-2">
+                        <label class="uk-form-label uk-width-1-6">Y 轴下限值</label>
+                        <input class="input uk-width-1-4" id='YAxialBottomLimit' value='49.95'>
+                    </div>
+                    <div class=" uk-width-1-2">
+                        <label class="uk-form-label uk-width-1-6">Y 轴上限值</label>
+                        <input class="input uk-width-1-4" id='YAxialTopLimit' value='50.05'>
+                    </div>
+
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-1-2">
+                        <label class="uk-form-label uk-width-1-6">Y 轴 「正常值」 下限</label>
+                        <input class="input uk-width-1-4" id='YAxialIntervalBottomLimit' value='49.967'>
+                    </div>
+                    <div class="uk-width-1-2">
+                        <label class="uk-form-label uk-width-1-6">Y 轴 「正常值」 上限值</label>
+                        <input class="input uk-width-1-4" id='YAxialIntervalTopLimit' value='50.033'>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <hr>
+        <div class="uk-button-group">
+            <button class='uk-button-success uk-button' onclick='LoadFreqCurve()'> 加载频率曲线</button>
+        </div>
+        <br/>
+        <br/>
+
+        <div id="canvas"></div>
+        <div id="bottom">.</div>
+    </article>
+</div>

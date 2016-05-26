@@ -1,0 +1,37 @@
+<div class="tm-main uk-width-medium-5-6">
+
+    <article class="uk-article">
+        <h1 class="uk-article-title">SIS 数据类型饼图</h1>
+
+        <p class="uk-article-lead">以新密电厂SIS数据为例的报警类型统计饼图。</p>
+
+        <form class="uk-form uk-form-horizontal">
+            <fieldset data-uk-margin="">
+                <legend>基本配置</legend>
+                <div hidden="0" class="uk-form-row">
+                    <label class="uk-form-label">数据库配置</label>
+                    <input class="input" id='DBIPAddress' value='42.96.195.2:1337' disabled='true'>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label">统计饼图的变量类型</label>
+                </div>
+                <div class="uk-form-row">
+                    <input type="radio" name="X_Axis_Name" id='X_Axis_Name_001' value="warn_type" checked="true">报警类型
+                    <input type="radio" name="X_Axis_Name" id='X_Axis_Name_002' value="priority">报警优先级
+                    <input type="radio" name="X_Axis_Name" id='X_Axis_Name_003' value="en_name">报警EN名称
+                    <input type="radio" name="X_Axis_Name" id='X_Axis_Name_004' value="cn_desc">报警CN名称
+                </div>
+            </fieldset>
+        </form>
+
+        <br/>
+
+        <div class="uk-button-group">
+            <button class='uk-button-success uk-button' onclick='LoadSisPie()'> 加载饼图</button>
+        </div>
+        <br/>
+        <br/>
+        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+        <div id="main" style="height:400px"></div>
+    </article>
+</div>

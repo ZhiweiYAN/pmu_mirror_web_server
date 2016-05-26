@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>如何自定义 - UIkit 中文文档</title>
+        <meta name="description" content="介绍如何自定义 UIkit以及它的用法，压缩UIKit CSS文件及导出导入LESS文件。">
+        <meta name="author" content="UIkit中文网">
+        <meta name="keywords" content="UIkit使用方法,压缩UIkit,UIKit LESS文件导出,UIKit LESS文件导入下载,UIKit高级模式,UIKit RTL 模式,定制UIKit">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+        <link id="data-uikit-theme" rel="stylesheet" href="css/uikit.docs.min.css">
+        <link rel="stylesheet" href="css/docs.css">
+        <link rel="stylesheet" href="../vendor/highlight/highlight.css">
+        <script src="../vendor/jquery.js"></script>
+        <script src="../dist/js/uikit.min.js"></script>
+        <script src="../vendor/highlight/highlight.js"></script>
+        <script src="js/docs.js"></script>
+    </head>
+
+    <body class="tm-background">
+
+        <nav class="tm-navbar uk-navbar uk-navbar-attached">
+            <div class="uk-container uk-container-center">
+
+                <a class="uk-navbar-brand uk-hidden-small" href="http://www.getuikit.net/index.html" title="UIkit"><img class="uk-margin uk-margin-remove" src="images/logo_uikit.svg" width="90" height="30" alt="UIkit"></a>
+
+                <ul class="uk-navbar-nav uk-hidden-small">
+                    <li class="uk-active"><a href="documentation_get-started.html">开始使用</a></li>
+                    <li><a href="components.html">功能组件</a></li>
+                    <li><a href="addons.html">附加组件</a></li>
+                    <li><a href="customizer.html">定制下载</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+
+                <a href="documentation_how-to-customize.html#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+
+                <div class="uk-navbar-brand uk-navbar-center uk-visible-small"><a href="http://www.getuikit.net/index.html" title="UIkit"><img src="images/logo_uikit.svg" width="90" height="30" alt="UIkit"></a></div>
+
+            </div>
+        </nav>
+
+        <div class="tm-middle">
+            <div class="uk-container uk-container-center">
+
+                <div class="uk-grid" data-uk-grid-margin>
+                    <div class="tm-sidebar uk-width-medium-1-4 uk-hidden-small">
+
+                        <ul class="tm-nav uk-nav" data-uk-nav>
+
+                            <li class="uk-nav-header">初学者</li>
+                            <li><a href="documentation_get-started.html">开始使用</a></li>
+                            <li class="uk-active"><a href="documentation_how-to-customize.html">如何自定义</a></li>
+							<li><a href="documentation_layouts.html">布局示例</a></li>
+                            <li class="uk-nav-header">开发者</li>
+                            <li><a href="documentation_project-structure.html">项目结构</a></li>
+                            <li><a href="documentation_create-a-theme.html">创建主题</a></li>
+                            <li><a href="documentation_create-a-style.html">创建样式</a></li>
+                            <li><a href="documentation_customizer-json.html">Customizer.json</a></li>
+							<li><a href="documentation_javascript.html">JavaScript</a></li>
+
+                        </ul>
+
+                    </div>
+                    <div class="tm-main uk-width-medium-3-4">
+
+                        <article class="uk-article">
+
+                            <h1>如何自定义</h1>
+
+                            <p class="uk-article-lead">使用定制器创建你自己的风格样式。</p>
+
+                            <p>UIKit 配备了一个<a href="customizer.html">定制器</a>，你只需点击几下鼠标就可以对主题做出相应的调整，这不需要任何的CSS知识。你可以下载你全新的CSS文件，甚至是LESS的变量文件，这些都可以立即投入使用。</p>
+
+                            <p><span class="uk-badge">注意</span> 为了达到最佳性能，我们建议禁用加载项，比如 <em>Firefox</em> 中的Web开发者工具 Firebug。</p>
+
+                            <h2>用法</h2>
+
+                            <p>在选择框中选择你希望自定义的主题。点击操作框中的彩色方块打开对话框修改颜色。点击文本框并输入一个数值来调整尺寸，比如width（宽度）和margin（边距）。你甚至可以使用不同的单位，定制器会自动的进行重新计算。如果对调整的结果感到满意之后，点击 <em>下载 CSS</em> 来下载这个主题的CSS文件，并把它复制到你的 UIkit <code>/css</code> 文件夹中。</p>
+
+                            <h3>高级模式</h3>
+
+                            <p>定制器中的变量被分成了两个部分，默认状态下显示的变量和只出现在 <em>高级模式</em> 中显示的变量。默认可见的变量通常是全局变量，因为它们通常被用来定义组件变量的数值。要查看组件的变量，只需选中 “高级模式” 。</p>
+
+                            <h3>More</h3>
+
+                            <p>默认情况下，变量的值是通过另一个被隐藏变量来进行定义。在高级模式中你可以看到一些后面带有 <em>(more)</em> 按钮的组，这里面便是被那些影藏的变量。这些选项功能非常强大，使用它们你可以自定义组件的变量值。</p>
+
+                            <h3>压缩 CSS</h3>
+
+                            <p>在下载你的主题前，选中 <em>压缩 CSS</em> ， UIkit将会删除CSS文件中所有的换行符和不必要的空格，从而大大减少文件的体积。</p>
+
+                            <h3>RTL 模式</h3>
+
+                            <p>UIKit拥有“从右向左”排列的语言本土化选项。所有你需要做的就是点击 <em>RTL 模式</em>，然后整个主题会自动转换。</p>
+
+                            <h3>下载 LESS</h3>
+
+                            <p>你也可以选择下载一个只有变量的LESS文件，并在你的项目中使用。</p>
+
+                        </article>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tm-footer">
+            <div class="uk-container uk-container-center uk-text-center">
+
+                <ul class="uk-subnav uk-subnav-line">
+                    <li><a href="https://github.com/uikit/uikit" target="_blank" rel="nofollow">GitHub</a></li>
+                    <li><a href="https://github.com/uikit/uikit/issues" target="_blank" rel="nofollow">问题反馈</a></li>
+                    <li><a href="https://github.com/uikit/uikit/blob/master/CHANGELOG.md" target="_blank" rel="nofollow">更新日志</a></li>
+                    <li><a href="http://weibo.com/getuikit" target="_blank" rel="nofollow">新浪微博</a></li>
+                    <li><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0c44dcd3aa48076b3e0a91169a4ac665' type='text/javascript'%3E%3C/script%3E"));
+</script></li>
+                </ul>
+
+                <div class="uk-panel">
+                    <p>Made by <a href="http://www.yootheme.com" target="_blank" rel="nofollow">YOOtheme</a> with love and caffeine.<br>Licensed under <a href="http://opensource.org/licenses/MIT" target="_blank" rel="nofollow">MIT license</a>.<br><a href="http://www.getuikit.net/">UIkit中文网</a>翻译</p>
+                    <a href="http://www.getuikit.net/index.html"><img src="images/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="tm-offcanvas" class="uk-offcanvas">
+
+            <div class="uk-offcanvas-bar">
+
+                <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="{multiple:true}">
+                    <li class="uk-parent uk-active"><a href="documentation_how-to-customize.html#">说明文档</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="documentation_get-started.html">开始使用</a></li>
+                            <li><a href="documentation_how-to-customize.html">如何自定义</a></li>
+							<li><a href="documentation_layouts.html">布局示例</a></li>
+                            <li><a href="components.html">功能组件</a></li>
+                            <li><a href="addons.html">附加组件</a></li>
+                            <li><a href="documentation_project-structure.html">项目结构</a></li>
+                            <li><a href="documentation_create-a-theme.html">创建主题</a></li>
+                            <li><a href="documentation_create-a-style.html">创建样式</a></li>
+                            <li><a href="documentation_customizer-json.html">Customizer.json</a></li>
+							<li><a href="documentation_javascript.html">JavaScript</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-nav-header">功能组件</li>
+                    <li class="uk-parent"><a href="documentation_how-to-customize.html#"><i class="uk-icon-wrench"></i> 默认</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="normalize.html" title="Normalize component">标准化</a></li>
+                            <li><a href="base.html" title="Base component">基础</a></li>
+                            <li><a href="print.html" title="Print component">打印</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_how-to-customize.html#"><i class="uk-icon-th-large"></i> 布局</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="grid.html" title="Grid component">网格</a></li>
+                            <li><a href="panel.html" title="Panel component">面板</a></li>
+                            <li><a href="article.html" title="Article component">文章</a></li>
+                            <li><a href="comment.html" title="Comment component">评论</a></li>
+                            <li><a href="utility.html" title="Utility component">效果</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_how-to-customize.html#"><i class="uk-icon-bars"></i> 导航</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="nav.html" title="Nav component">导航菜单</a></li>
+                            <li><a href="navbar.html" title="Navbar component">导航栏</a></li>
+                            <li><a href="subnav.html" title="Subnav component">子导航</a></li>
+                            <li><a href="breadcrumb.html" title="Breadcrumb component">面包屑</a></li>
+                            <li><a href="pagination.html" title="Pagination component">分页</a></li>
+                            <li><a href="tab.html" title="Tab component">选项卡</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_how-to-customize.html#"><i class="uk-icon-check"></i> 元素</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="list.html" title="List component">列表</a></li>
+                            <li><a href="description-list.html" title="Description list component">描述列表</a></li>
+                            <li><a href="table.html" title="Table component">表格</a></li>
+                            <li><a href="form.html" title="Form component">表单</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_how-to-customize.html#"><i class="uk-icon-folder-open"></i> 常用</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="button.html" title="Button component">按钮</a></li>
+                            <li><a href="icon.html" title="Icon component">图标</a></li>
+                            <li><a href="close.html" title="Close component">关闭</a></li>
+                            <li><a href="badge.html" title="Badge component">徽章</a></li>
+                            <li><a href="alert.html" title="Alert component">提示框</a></li>
+                            <li><a href="thumbnail.html" title="Thumbnail component">缩略图</a></li>
+                            <li><a href="overlay.html" title="Overlay component">覆盖</a></li>
+                            <li><a href="progress.html" title="Progress component">进度条</a></li>
+                            <li><a href="search.html" title="Search component">搜索</a></li>
+                            <li><a href="text.html" title="Text component">文本</a></li>
+                            <li><a href="animation.html" title="Animation component">动画</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_how-to-customize.html#"><i class="uk-icon-magic"></i> JavaScript</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="dropdown.html" title="Dropdown">下拉菜单</a></li>
+                            <li><a href="modal.html" title="Modal component">模态对话框</a></li>
+                            <li><a href="offcanvas.html" title="Off-canvas component">弹出式画布</a></li>
+                            <li><a href="switcher.html" title="Switcher component">切换器</a></li>
+                            <li><a href="toggle.html" title="Toggle component">拨动</a></li>
+                            <li><a href="tooltip.html" title="Tooltip component">提示组件</a></li>
+                            <li><a href="scrollspy.html" title="Scrollspy component">监听滚动</a></li>
+                            <li><a href="smooth-scroll.html" title="Smooth scroll component">平滑滚动</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="documentation_how-to-customize.html#">附加组件</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="addons_markdownarea.html" title="Markdown area add-on">Markdown 编辑器</a></li>
+                            <li><a href="addons_sortable.html" title="Sortable add-on">拖放排序</a></li>
+                            <li><a href="addons_datepicker.html" title="Datepicker add-on">日期选择器</a></li>
+                            <li><a href="addons_timepicker.html" title="Timepicker add-on">时间选择器</a></li>
+                            <li><a href="addons_sticky.html" title="Sticky add-on">黏性组件</a></li>
+                            <li><a href="addons_notify.html" title="Notify add-on">通告组件</a></li>
+                            <li><a href="addons_form-password.html" title="Form password add-on">表单密码</a></li>
+                            <li><a href="addons_form-file.html" title="Form file">文件域</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+        <a href="javascript:void(0)" id="goTop" class="uk-button" data-uk-smooth-scroll><i class="uk-icon-chevron-up"></i></a>
+
+    </body>
+</html>
